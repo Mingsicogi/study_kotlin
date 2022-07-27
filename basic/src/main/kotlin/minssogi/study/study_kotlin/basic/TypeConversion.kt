@@ -7,4 +7,9 @@ fun main() {
     println("${intNumber::class.java}")
     println("${intNumber.toLong()::class.java}")
 
+    // data flooding
+    val longNumber = 7_500_000_000
+    println("longNumber : $longNumber")
+    println("longNumber to int : ${longNumber.toInt()}")
+
 }
