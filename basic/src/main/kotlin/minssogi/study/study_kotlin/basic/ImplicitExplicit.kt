@@ -14,5 +14,6 @@ fun main() {
     val shortNumber: Short = 5
     println("${shortNumber::class.java}")
 
-
+    val floatNumber: Float = 0.99f
+    println("${floatNumber::class.java}")
 }
