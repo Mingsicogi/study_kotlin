@@ -8,6 +8,11 @@ fun main() {
     println("${intNumber::class.java} | ${decimalNumber::class.java}")
 
     // explicit
-    val shortNumber: Byte = 5
+    val byteNumber: Byte = 5
+    println("${byteNumber::class.java}")
+
+    val shortNumber: Short = 5
     println("${shortNumber::class.java}")
+
+
 }
