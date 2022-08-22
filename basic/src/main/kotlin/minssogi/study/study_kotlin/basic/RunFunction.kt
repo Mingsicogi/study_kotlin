@@ -2,7 +2,7 @@ package minssogi.study.study_kotlin.basic
 
 fun main() {
 
-    Car(80, "minssogi car").run {
+    NewCar(80, "minssogi car").run {
         println("car info : car name = ${this.name} | speed = ${this.speed}")
     }
 }
