@@ -1,4 +1,4 @@
-package minssogi.study.study_kotlin.basic
+package minssogi.study.study_kotlin.basic.coroutines
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
