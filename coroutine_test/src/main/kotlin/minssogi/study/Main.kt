@@ -1,6 +1,7 @@
 package minssogi.study
 
 import kotlinx.coroutines.*
+import java.lang.Exception
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
@@ -27,7 +28,7 @@ fun main() {
 
 suspend fun getGameInfo(): String {
     return coroutineScope {
-        get("http://127.0.0.1:8080/api/sample/game/getGameInfo")
+        get("http://127.0.0.1:808/api/sample/game/getGameInfo")
     }
 }
 
