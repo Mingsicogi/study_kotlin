@@ -15,7 +15,7 @@ class Task {
 
         val taskTime = Random.nextInt(100, 500)
 
-        val processingMessage = "task processing... it will be done after ${taskTime / 1000.0}s"
+        val processingMessage = "fast task processing... it will be done after ${taskTime / 1000.0}s"
         println(processingMessage)
         Thread.sleep(taskTime * 1L) // task processing... ...
 
@@ -27,7 +27,7 @@ class Task {
 
         val taskTime = Random.nextInt(1000, 2000)
 
-        val processingMessage = "task processing... it will be done after ${taskTime / 1000.0}s"
+        val processingMessage = "long task processing... it will be done after ${taskTime / 1000.0}s"
         println(processingMessage)
         Thread.sleep(taskTime * 1L) // task processing... ...
 
@@ -39,7 +39,7 @@ class Task {
 
         val taskTime = Random.nextInt(2000, 5000)
 
-        val processingMessage = "task processing... it will be done after ${taskTime / 1000.0}s"
+        val processingMessage = "veryLong task processing... it will be done after ${taskTime / 1000.0}s"
         println(processingMessage)
         Thread.sleep(taskTime * 1L) // task processing... ...
 

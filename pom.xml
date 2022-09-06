@@ -15,6 +15,7 @@
     <modules>
         <module>basic</module>
         <module>coroutine_exercise</module>
+        <module>coroutine_test</module>
     </modules>
 
     <groupId>minssogi.study</groupId>
