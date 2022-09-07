@@ -2,7 +2,7 @@ package minssogi.study;
 
 import java.util.concurrent.CompletableFuture;
 
-public class JavaAsyncExample {
+public class JavaCompletableFutureExample {
 
     public static void main(String[] args) throws Exception {
 
@@ -24,7 +24,7 @@ public class JavaAsyncExample {
     }
 
     public static CompletableFuture<String> getGameInfo() {
-        return CompletableFuture.supplyAsync(() -> MainKt.get("http://127.0.0.1:808/api/sample/game/getGameInfo"));
+        return CompletableFuture.supplyAsync(() -> MainKt.get("http://127.0.0.1:8080/api/sample/game/getGameInfo"));
     }
 
     public static CompletableFuture<String> getCharacterInfo() {
