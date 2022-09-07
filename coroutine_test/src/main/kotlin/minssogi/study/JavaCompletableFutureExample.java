@@ -24,14 +24,14 @@ public class JavaCompletableFutureExample {
     }
 
     public static CompletableFuture<String> getGameInfo() {
-        return CompletableFuture.supplyAsync(() -> MainKt.get("http://127.0.0.1:8080/api/sample/game/getGameInfo"));
+        return CompletableFuture.supplyAsync(() -> KotlinCoroutineKt.get("http://127.0.0.1:8080/api/sample/game/getGameInfo"));
     }
 
     public static CompletableFuture<String> getCharacterInfo() {
-        return CompletableFuture.supplyAsync(() -> MainKt.get("http://127.0.0.1:8080/api/sample/game/getCharacterInfo"));
+        return CompletableFuture.supplyAsync(() -> KotlinCoroutineKt.get("http://127.0.0.1:8080/api/sample/game/getCharacterInfo"));
     }
 
     public static CompletableFuture<String> getPaymentInfoFuture() {
-        return CompletableFuture.supplyAsync(() -> MainKt.get("http://127.0.0.1:8080/api/sample/game/getPaymentInfo"));
+        return CompletableFuture.supplyAsync(() -> KotlinCoroutineKt.get("http://127.0.0.1:8080/api/sample/game/getPaymentInfo"));
     }
 }

@@ -2,9 +2,6 @@ package minssogi.study;
 
 import reactor.core.publisher.Mono;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 public class JavaReactorExample {
 
     public static void main(String[] args) {
@@ -42,14 +39,14 @@ public class JavaReactorExample {
     }
 
     public static Mono<String> getGameInfo() {
-        return Mono.just(MainKt.get("http://127.0.0.1:8080/api/sample/game/getGameInfo"));
+        return Mono.just(KotlinCoroutineKt.get("http://127.0.0.1:8080/api/sample/game/getGameInfo"));
     }
 
     public static Mono<String> getCharacterInfo() {
-        return Mono.just(MainKt.get("http://127.0.0.1:8080/api/sample/game/getCharacterInfo"));
+        return Mono.just(KotlinCoroutineKt.get("http://127.0.0.1:8080/api/sample/game/getCharacterInfo"));
     }
 
     public static Mono<String> getPaymentInfo() {
-        return Mono.just(MainKt.get("http://127.0.0.1:8080/api/sample/game/getPaymentInfo"));
+        return Mono.just(KotlinCoroutineKt.get("http://127.0.0.1:8080/api/sample/game/getPaymentInfo"));
     }
 }

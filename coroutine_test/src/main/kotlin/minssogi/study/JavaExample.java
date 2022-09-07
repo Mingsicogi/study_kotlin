@@ -12,14 +12,14 @@ public class JavaExample {
     }
 
     public static String getGameInfo() {
-        return MainKt.get("http://127.0.0.1:8080/api/sample/game/getGameInfo");
+        return KotlinCoroutineKt.get("http://127.0.0.1:8080/api/sample/game/getGameInfo");
     }
 
     public static String getCharacterInfo() {
-        return MainKt.get("http://127.0.0.1:8080/api/sample/game/getCharacterInfo");
+        return KotlinCoroutineKt.get("http://127.0.0.1:8080/api/sample/game/getCharacterInfo");
     }
 
     public static String getPaymentInfoFuture() {
-        return MainKt.get("http://127.0.0.1:8080/api/sample/game/getPaymentInfo");
+        return KotlinCoroutineKt.get("http://127.0.0.1:8080/api/sample/game/getPaymentInfo");
     }
 }
