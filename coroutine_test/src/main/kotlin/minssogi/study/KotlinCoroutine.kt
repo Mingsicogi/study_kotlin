@@ -11,7 +11,6 @@ val client = HttpClient.newBuilder().build()
 
 fun main() {
     runBlocking {
-        val start = System.currentTimeMillis()
 
         val gameInfo = async (Dispatchers.IO) { getGameInfo() }
         val characterInfo = async (Dispatchers.IO) { getCharacterInfo() }
@@ -21,14 +20,23 @@ fun main() {
         println(characterInfo.await())
         println(paymentInfo.await())
 
+        val start = System.currentTimeMillis()
+
+        val gameInfo2 = async (Dispatchers.IO) { getGameInfo() }
+        val characterInfo2 = async (Dispatchers.IO) { getCharacterInfo() }
+        val paymentInfo2 = async (Dispatchers.IO) { getPaymentInfo() }
+
+        println(gameInfo2.await())
+        println(characterInfo2.await())
+        println(paymentInfo2.await())
+
         println("It tooks ${(System.currentTimeMillis() - start) / 1000.0}")
     }
 }
 
-
 suspend fun getGameInfo(): String {
     return coroutineScope {
-        get("http://127.0.0.1:808/api/sample/game/getGameInfo")
+        get("http://127.0.0.1:8080/api/sample/game/getGameInfo")
     }
 }
 

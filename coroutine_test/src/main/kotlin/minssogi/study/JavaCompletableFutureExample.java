@@ -1,5 +1,6 @@
 package minssogi.study;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.CompletableFuture;
 
 public class JavaCompletableFutureExample {
@@ -7,20 +8,32 @@ public class JavaCompletableFutureExample {
     public static void main(String[] args) throws Exception {
 
         StringBuilder result = new StringBuilder();
+
+        // warm up - connection establish
+        CompletableFuture<String> future = getAllGameInfo(result);
+        System.out.println(future.get());
+
         long start = System.currentTimeMillis();
+        future = getAllGameInfo(result);
 
-        result.append(getGameInfo().thenComposeAsync(gameInfo -> {
-            result.append(gameInfo);
-            result.append("\n");
-            return getCharacterInfo();
-        }).thenComposeAsync(characterInfo -> {
-            result.append(characterInfo);
-            result.append("\n");
-            return getPaymentInfoFuture();
-        }).get());
-
-        System.out.println(result.toString());
+        System.out.println(future.get());
         System.out.println(("It tooks " + (System.currentTimeMillis() - start) / 1000.0));
+    }
+
+    private static CompletableFuture<String> getAllGameInfo(StringBuilder result) {
+        return getGameInfo().thenCombine(getCharacterInfo().thenCombine(getPaymentInfoFuture(), (characterInfo, paymentInfo) -> {
+                System.out.println("START getCharacterInfo, paymentInfo [" + LocalDateTime.now() + "] " + Thread.currentThread().getName());
+                String a = result.append(characterInfo).append("\n").append(paymentInfo).append("\n").toString();
+                System.out.println("END getCharacterInfo, paymentInfo [" + LocalDateTime.now() + "] " + Thread.currentThread().getName());
+                return a;
+            }),
+
+            (gameInfo, character) -> {
+                System.out.println("START getGameInfo [" + LocalDateTime.now() + "]" + Thread.currentThread().getName());
+                String b = result.append(gameInfo).append("\n").toString();
+                System.out.println("END getGameInfo [" + LocalDateTime.now() + "]" + Thread.currentThread().getName());
+                return b;
+            });
     }
 
     public static CompletableFuture<String> getGameInfo() {
