@@ -25,6 +25,18 @@ internal class ThreadingTest {
         threading.postItemAsync(Item("Iphone SE2", 1_000_000))
     }
 
+    @Test
+    internal fun threading_future() {
+        // give
+        newLineForPrettyPrint()
+        val threading = Threading()
+
+        // when
+        threading.postItemFuture(Item("Iphone SE2", 1_000_000))
+
+        Thread.sleep(5000)
+    }
+
     private fun newLineForPrettyPrint() {
         println()
         println()
