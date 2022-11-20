@@ -12,7 +12,7 @@ class Token {
     private var expireAt: LocalDateTime? = null
 
     fun createToken(): Token {
-        println("Start token generate. It will take 2 seconds.")
+        println("[${Thread.currentThread().name}] Start token generate. It will take 2 seconds.")
         Thread.sleep(2000)
 
         val token = Token()
@@ -24,6 +24,6 @@ class Token {
     }
 
     override fun toString(): String {
-        return "value=$value, createAt=$createAt, expireAt=$expireAt"
+        return "[${Thread.currentThread().name}] value=$value, createAt=$createAt, expireAt=$expireAt"
     }
 }

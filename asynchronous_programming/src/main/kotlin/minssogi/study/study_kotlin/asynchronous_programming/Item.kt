@@ -7,6 +7,6 @@ import lombok.ToString
 class Item(private val name: String, private val price: Int) {
 
     override fun toString(): String {
-        return "name=$name, price=$price"
+        return "[${Thread.currentThread().name}] name=$name, price=$price"
     }
 }

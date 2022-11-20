@@ -8,9 +8,9 @@ class Post {
     private var createAt: LocalDateTime? = null
 
     fun submitPost(token: Token, item: Item): Post {
-        println("Start submit post")
+        println("[${Thread.currentThread().name}] Start submit post")
 
-        println("Check token: $token It will take 1 second")
+        println("[${Thread.currentThread().name}] Check token: $token It will take 1 second")
         Thread.sleep(1000)
 
         val post = Post()
@@ -21,8 +21,8 @@ class Post {
     }
 
     fun processPost() {
-        println("Start process post. It will take 1 second.")
+        println("[${Thread.currentThread().name}] Start process post. It will take 1 second.")
         Thread.sleep(1000)
-        println("Post processing finished(post item: $item, createAt: $createAt)")
+        println("[${Thread.currentThread().name}] Post processing finished(post item: $item, createAt: $createAt)")
     }
 }

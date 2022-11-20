@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test
 internal class ThreadingTest {
 
     @Test
-    @Disabled
     fun threading_sync() {
         // give
+        newLineForPrettyPrint()
         val threading = Threading()
 
         // when
@@ -16,15 +16,19 @@ internal class ThreadingTest {
     }
 
     @Test
-    fun threading_async() {
+    internal fun threading_async() {
         // give
+        newLineForPrettyPrint()
         val threading = Threading()
 
         // when
         threading.postItemAsync(Item("Iphone SE2", 1_000_000))
+    }
 
-        // then
-        Thread.sleep(5000)
+    private fun newLineForPrettyPrint() {
+        println()
+        println()
+        println()
     }
 }
 

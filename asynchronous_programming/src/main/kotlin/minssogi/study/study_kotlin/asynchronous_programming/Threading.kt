@@ -21,18 +21,15 @@ class Threading {
             }
         }
 
+
         println("postItemAsync function tooks ${System.currentTimeMillis() - startTime}ms totally.")
     }
 
     fun preparePostAsync(callback: (Token) -> Unit) {
-        callback.run {
-            Token().createToken()
-        }
+        callback.invoke(Token().createToken())
     }
 
     fun submitPostAsync(token: Token, item: Item, callback: (Post) -> Unit) {
-        callback.run {
-            Post().submitPost(token, item)
-        }
+        callback.invoke(Post().submitPost(token, item))
     }
 }
